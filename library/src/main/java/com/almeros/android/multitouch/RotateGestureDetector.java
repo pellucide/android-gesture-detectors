@@ -157,13 +157,13 @@ public class RotateGestureDetector extends TwoFingerGestureDetector {
 
 
     /**
-     * Return the rotation difference from the previous rotate event to the current
-     * event. 
+     * Return rotation delta from current rotate event to previous event.
      * 
-     * @return The current rotation //difference in degrees.
+     * @return The current rotation difference in degrees.
      */
 	public float getRotationDegreesDelta() {
-		double diffRadians = Math.atan2(mPrevFingerDiffY, mPrevFingerDiffX) - Math.atan2(mCurrFingerDiffY, mCurrFingerDiffX);
-		return (float) (diffRadians * 180 / Math.PI);
+        double diffRadians = Math.atan2(mCurrFingerDiffY, mCurrFingerDiffX)
+                - Math.atan2(mPrevFingerDiffY, mPrevFingerDiffX);
+        return (float) (diffRadians * 180 / Math.PI);
 	}
 }

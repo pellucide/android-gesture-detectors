@@ -145,7 +145,7 @@ public class TouchActivity extends Activity implements OnTouchListener {
     private class RotateListener extends RotateGestureDetector.SimpleOnRotateGestureListener {
         @Override
         public boolean onRotate(RotateGestureDetector detector) {
-            mRotationDegrees -= detector.getRotationDegreesDelta();
+            mRotationDegrees += detector.getRotationDegreesDelta();
             return true;
         }
     }
