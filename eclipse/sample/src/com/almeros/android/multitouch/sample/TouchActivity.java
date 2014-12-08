@@ -62,7 +62,7 @@ public class TouchActivity extends Activity implements OnTouchListener {
         mImageView.setOnTouchListener(this);
 
         // Determine dimensions of 'earth' image
-        Drawable d = getResources().getDrawable(R.drawable.earth);
+        Drawable d = getResources().getDrawable(R.drawable.parc);
         mImageHeight = d.getIntrinsicHeight();
         mImageWidth = d.getIntrinsicWidth();
 
@@ -166,7 +166,7 @@ public class TouchActivity extends Activity implements OnTouchListener {
     private class ShoveListener extends ShoveGestureDetector.SimpleOnShoveGestureListener {
         @Override
         public boolean onShove(ShoveGestureDetector detector) {
-            mAlpha += detector.getShovePixelsDelta();
+            mAlpha += detector.getShovePixelsDelta()/2;
             mAlpha = Math.max(0, Math.min(mAlpha, 255));
             return true;
         }
